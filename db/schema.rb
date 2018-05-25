@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_210605) do
+ActiveRecord::Schema.define(version: 2018_05_25_093337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_05_24_210605) do
     t.integer "arrange"
     t.string "type"
     t.bigint "article_id"
+    t.text "textContent"
+    t.string "imgUrl"
     t.index ["article_id"], name: "index_contents_on_article_id"
   end
 

@@ -7,6 +7,9 @@ class ArticlesController < ApplicationController
     @article.countLike++
     @article.save!
   end
+  def getLike
+    @article.countLike
+  end
   private
   def getArticle
     @article = Article.find(params[:id])

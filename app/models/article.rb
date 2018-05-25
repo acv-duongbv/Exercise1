@@ -1,3 +1,3 @@
 class Article < ApplicationRecord
-  has_many :content
+  has_many :contents
 end
