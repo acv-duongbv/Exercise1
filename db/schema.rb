@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_25_093337) do
+ActiveRecord::Schema.define(version: 2018_05_28_030356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,15 +22,20 @@ ActiveRecord::Schema.define(version: 2018_05_25_093337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "contents", force: :cascade do |t|
-    t.string "headline"
-    t.integer "arrange"
-    t.string "type" 
+  create_table "images", force: :cascade do |t|
     t.bigint "article_id"
-    t.text "textContent"
-    t.string "imgUrl" 
-    t.index ["article_id"], name: "index_contents_on_article_id"
+    t.index ["article_id"], name: "index_images_on_article_id"
   end
 
-  add_foreign_key "contents", "articles"
+  create_table "texts", force: :cascade do |t|
+    t.string "headline"
+    t.integer "arrange"
+    t.text "sentence"
+    t.integer "liked"
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_texts_on_article_id"
+  end
+
+  add_foreign_key "images", "articles"
+  add_foreign_key "texts", "articles"
 end

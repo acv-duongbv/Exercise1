@@ -1,3 +1,4 @@
 class Article < ApplicationRecord
-  has_many :contents
+  has_many :images
+  has_many :texts
 end
