@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2018_05_25_093337) do
   create_table "contents", force: :cascade do |t|
     t.string "headline"
     t.integer "arrange"
-    t.string "type"
+    t.string "type" 
     t.bigint "article_id"
     t.text "textContent"
-    t.string "imgUrl"
+    t.string "imgUrl" 
     t.index ["article_id"], name: "index_contents_on_article_id"
   end
 
